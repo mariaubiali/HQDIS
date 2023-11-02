@@ -1,0 +1,348 @@
+\documentclass[letterpaper,11pt]{article}
+\pdfoutput=1
+
+\usepackage{jheppub}
+\usepackage{multirow}
+\usepackage{subfig}
+\usepackage{xspace}
+\usepackage{xcolor}
+\usepackage[countmax]{subfloat}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{slashed}
+%\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{tikz-feynman,contour}
+\usepackage{tikz,pgf}
+\usepackage{braket}
+\usepackage{amsfonts}
+\usepackage{amsthm,scrextend,bbold}
+\usepackage{comment}
+%\usepackage{showkeys}
+
+%s\usepackage{bigints}
+
+
+\newcommand{\as}{\alpha_\text{s}}
+\newcommand{\cf}{C_{\text{F}}}
+\newcommand{\ca}{C_{\text{A}}}
+\newcommand{\nc}{N_{\text{C}}}
+\newcommand{\msb}{\overline{\text{MS}}}
+\newcommand{\order}[1]{{\cal O}\left(#1\right)}
+\newcommand{\Ob}{{\cal O}}
+\newcommand{\ecf}{e_2^{(2)}}
+\newcommand{\pull}{\underline{t}}
+\DeclareMathOperator{\De}{d}
+\newcommand{\de}{\De\!}
+\newcommand{\xf}{x}
+\newcommand{\tf}{t_{\text{F}}}
+%\newcommand{\xt}{x_{\text{T}}}
+\newcommand{\xt}{\tau}
+\newcommand{\Tt}{t_{\text{T}}}
+\newcommand{\xb}{x_{\text{B}}}
+\newcommand{\chib}{\chi_{\text{B}}}
+\newcommand{\tb}{t_{\text{B}}}
+\newcommand{\gs}{\gamma_\text{soft}}
+\newcommand{\gszero}{\gamma_\text{soft}^{(0)}}
+\newcommand{\gszeroMm}{\gamma_\text{soft1}^{(0)}}
+\newcommand{\gszerotilde}{\widetilde{\gamma}_\text{soft}^{(0,\text{sub})}}
+\newcommand{\gszerotildeMm}{\gamma_\text{soft1}^{(0,\text{sub})}}
+\newcommand{\gsone}{\gamma_\text{soft}^{(1)}}
+\newcommand{\cone}{C^{(1)}}
+\newcommand{\fonll}{FO(NLL)$^2$ }
+\newcommand{\muf}{\mu_{\text{F}}}
+\newcommand{\muOf}{\mu_{0\text{F}}}
+\newcommand{\mur}{\mu_{\text{R}}}
+\newcommand{\muOr}{\mu_{0\text{R}}}
+\newcommand{\bzerofour}{\beta_0^{(4)}}
+\newcommand{\bzerofive}{\beta_0^{(5)}}
+\newcommand{\bonefour}{\beta_1^{(4)}}
+\newcommand{\bonefive}{\beta_1^{(5)}}
+\usepackage{color}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkorange}{rgb}{0.8,0.3,0}
+\newcommand{\ag}[1]{\textbf{\textcolor{darkorange}{(#1 --ag)}}}
+\newcommand{\sm}[1]{\textbf{\textcolor{darkgreen}{(#1 -sm)}}}
+\newcommand{\gr}[1]{\textbf{\textcolor{cyan}{(#1 -gr)}}}
+
+
+
+\DeclareRobustCommand{\Sec}[1]{Sect.~\ref{#1}}
+\DeclareRobustCommand{\Secs}[2]{Secs.~\ref{#1} and \ref{#2}}
+\DeclareRobustCommand{\App}[1]{App.~\ref{#1}}
+\DeclareRobustCommand{\Tab}[1]{Table~\ref{#1}}
+\DeclareRobustCommand{\Tabs}[2]{Tables~\ref{#1} and \ref{#2}}
+\DeclareRobustCommand{\Fig}[1]{Fig.~\ref{#1}}
+\DeclareRobustCommand{\Figs}[2]{Figs.~\ref{#1} and \ref{#2}}
+\DeclareRobustCommand{\Eq}[1]{Eq.~(\ref{#1})}
+\DeclareRobustCommand{\Eqs}[2]{Eqs.~(\ref{#1}) and (\ref{#2})}
+\DeclareRobustCommand{\Ref}[1]{Ref.~\cite{#1}}
+\DeclareRobustCommand{\Refs}[1]{Refs.~\cite{#1}}
+
+\newcommand{\pythia}[1]{\textsc{Pythia\xspace #1}}
+\newcommand{\madgraph}[1]{\textsc{MadGraph5\xspace #1}}
+\newcommand{\fastjet}[1]{\textsc{FastJet\xspace #1}}
+\newcommand{\herwig}[1]{\textsc{Herwig\xspace #1}}
+\newcommand{\herwigpp}[1]{\textsc{Herwig++\xspace #1}}
+\newcommand{\vincia}[1]{\textsc{Vincia\xspace #1}}
+
+\newcommand{\mathematica}{\texttt{Mathematica }}
+\newcommand{\hypexp}{\texttt{HypExp }}
+\newcommand{\eventtwo}{\texttt{EVENT2}}
+
+\bibliographystyle{JHEP}
+
+%\preprint{}
+
+
+\title{
+CC DIS
+}
+
+\author[1]{Andrea Ghira,}
+\author[1]{Simone Marzani,}
+\author[1]{Giovanni Ridolfi,}
+\author[2]{and Maria Ubiali}
+
+\affiliation[1]{Dipartimento di Fisica, Universit\`a di Genova and INFN, Sezione di Genova,Via Dodecaneso 33, 16146, Italy}
+\affiliation[2]{DAMTP, University of Cambridge, Wilberforce Road, Cambridge, CB3 0WA, United Kingdom}
+\emailAdd{andrea.ghira@ge.infn.it}
+\emailAdd{simone.marzani@ge.infn.it}
+\emailAdd{giovanni.ridolfi@ge.infn.it}
+\emailAdd{mu227@cam.ac.uk}
+
+\abstract{}
+
+\begin{document}
+\maketitle
+
+
+\section{Introduction}\label{sec:intro}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Extension to other processes}\label{sec:extensions}
+
+Thus far, we have focussed our discussion on the decay of a of colour singlet into a heavy-quark pairs. However, our calculation relies upon factorisation properties of QCD matrix elements in the quasi-collinear and soft limits, which are universal. Therefore, our formalism can be applied to different processes. In this section, we discuss some applications, highlighting the structure of parton-level results. This will enable us to shed light on issues pointed out in the literature. In this context, we will also discuss similarities and differences with other approaches. 
+%
+Instead, we will leave phenomenological (hadron-level) studies to future work.
+
+\subsection{Deep inelastic scattering with heavy flavours}\label{sec:dis}
+
+The first process we would like to discuss is deep-inelastic scattering (DIS) with heavy flavours. In particular, we focus on charged current (CC) DIS. Our discussion applies to to the scattering of a neutrino $\nu$ off a nucleus $N$, $\nu N \to l X$, where $l$ is a charged lepton, as well as to CC  $l N \to \nu X$ scattering. In both cases, we are interested in the situation in which charm flavour is identified in the final state. The parton-model contribution to these processes is given by
+\begin{equation}
+	q(p_1)+W^*(q)\to c (p_2)\quad p_1^2=0,\quad p_2^2=m^2,
+\end{equation}
+where the initial-state quark is taken massless.~\footnote{Neutral-current DIS with heavy flavours is also interesting, especially in the context  of studies about the intrinsic heavy-flavour component of the proton wavefunction.} Note that in this section we use $m$ to indicate the charm quark mass and we define the related adimensional ratio $\xi=\frac{m^2}{Q^2}$, with $Q^2=-q^2>0$.
+
+
+%
+It is interesting to note that CC-DIS experiments cover a rather large kinematical range in both the Bjorken scaling variable $x_\text{B}= \frac{Q^2}{2 P\cdot q}$ (where $P$ is the momentum of the nucleon) and the momentum transferred $Q^2$. 
+Depending on the relative size of the charm quark mass $m^2$ and $Q^2$, a massless calculation or a massive one maybe more appropriate. 
+%
+Furthermore, if we want to investigate the large $x_{\text{B}}$ as done, for instance, in fixed-target experiments, then we face the issue of consistently combining the resummation of collinear logarithms and large-$x$ logarithms.
+%
+This problem was first investigated in Ref.~\cite{Corcella:2003ib}, where two separate formulations of soft-gluon resummation were derived: one valid in massless limit $m^2 \ll Q^2$ and one that kept the full charm-mass dependence, appropriate for the region $m^2 \sim Q^2$. 
+%
+The Authors of Ref.~\cite{Corcella:2003ib} noted that the non-commutativity of the $m^2/Q^2 \to 0$ and $N \to \infty$ limits prevented them from obtaining a single resummed formula. 
+%
+%
+Thanks to the formalism we have developed, we are now able to bridge the gap between these two formulations, arriving at a unified resummed expression that interpolates between the two regimes.
+
+We start by reviewing the basic framework used to describe CC DIS. We try to follow as much as possible the notation adopted in~\cite{Corcella:2003ib}. For this reason, we consider neutrino scattering (a similar expression holds for lepton scattering) and write the double differential cross section in terms of three structure functions $F_1, F_2$ and $F_3$:
+\begin{align}\label{eq:sigma DIS CC}
+		\frac{\de^2\sigma^{\nu (\bar{\nu})}}{\de \xb \de y}= \frac{G_{\text{F}}M E}{\pi \left(1+\frac{Q^2}{M_W^2}\right)^2}\left\{y^2 \xb F_1+\left[1-\left(1+\frac{M \xb}{2 E}\right)\right]F_2\pm y\left(1-\frac{y}{2}\right)\xb F_3\right\}.
+\end{align}
+Here $G_F$ is the Fermi constant, $M$ the mass of the nucleon, $E$ is the neutrino energy in the nucleon rest frame, and $y= \frac{P\cdot q}{P\cdot l_1}$,
+with $l_1$ the momentum of the incoming lepton. The parton model and collinear factorisation allow us to express the structure functions $F_i$ in terms of perturbative coefficients functions and universal parton distribution functions (PDFs). However, in the presence of heavy quarks, the parton model needs to be generalised~\cite{Aivazis:1993kh,Aivazis:1993pi,Kretzer:1998ju,Collins:1998rz}
+%
+In particular, one usually introduces new scaling variables,
+\begin{equation}
+	\chi_{\text{B}}=\frac{\eta}{Q^2}\left(Q^2+m^2\right), \quad 	\frac{1}{\eta} = \frac{1}{2\xb}+\sqrt{\frac{1}{4\xb^2}+\frac{M^2}{Q^2}},
+\end{equation}
+which both reduce to the standard $x_\text{B}$ scaling variable when $m, M \to 0$.
+%
+If we parametrise the momentum of the nucleon in light-cone coordinates as $P^\mu=(P^+,\vec{0},\frac{M^2}{2 P^+})$, then, in the generalised parton model, the momentum of the incoming parton is assumed to be $p_1^\mu=(\zeta P^+,\vec{0},0)$. 
+%
+At tree-level, this leads to $\chi=\zeta$, so $\chi$ can be interpreted as the ``energy'' fraction of the incoming quark respect to the nucleon \cite{Aivazis:1993kh}.\footnote{The energy fraction is usually labelled $\xi$ in the literature, but we here we use $\chi$ to avoid confusion with $\xi$ previously defined.}
+%
+The analysis of higher-order corrections leads to a generalisation of collinear factorisation, in the presence of heavy quarks:
+\begin{equation} \label{eq:coll-fact-HQ}
+	\mathcal{F}^i(\chib,\xi)=\int^1_{\chib} \frac{\de \zeta}{\zeta} \left[C^i_q\left(\frac{\chib}{\zeta},\muf^2,\xi\right) f_q(\zeta,\muf^2)+C^i_g\left(\frac{\chib}{\zeta},\muf^2,\xi\right) f_g(\zeta,\muf^2)\right],
+\end{equation}
+for $i=1,2,3$. 
+The $\mathcal{F}^i$ functions are related to the structure functions $F_i$ through:
+\begin{equation}
+		\mathcal{F}_1=F_1, \quad 
+		\mathcal{F}_2=\frac{2 \xb(m^2+Q^2)}{Q^2+4M^2 \xb^2} F_2, \quad 
+		\mathcal{F}_3=\frac{2}{\sqrt{1+\frac{4 M^2 \xb^2}{Q^2}}} F_3.
+\end{equation}
+In Eq.~(\ref{eq:coll-fact-HQ}), $C_i^q$ and $C_i^g$ are the coefficient functions the quark- and gluon-initiated processes, and $f_q$ and $f_g$ are the corresponding PDFs.
+%
+Note that the coefficient functions depends on the charm mass through $\xi$ and that their scaling variable is $x=\frac{\chib}{\zeta}$.
+
+The quark-initiated contribution is enhanced in the soft limit and NLL resummation was performed in~\cite{Corcella:2003ib} by considering Mellin moments of the coefficient functions $C_i^q$:
+\begin{align}\label{eq:resummed_DIS_massive}
+\widetilde{C}^i_q\left(N,\frac{Q^2}{\muf^2},\xi\right)&= \int_0^1 \de  x \, x^{N-1}
+C^i_q\left(x,\muf^2,\xi\right) 
+=\left(1+ \frac{\as(\mur^2)\cf }{\pi}\mathcal{H}^i_1\left(\frac{Q^2}{\muf^2},\xi\right)\right) \nonumber \\
+&
+\exp\left\{-\int^{1}_{\frac{1}{\bar N}} \frac{\de z}{z} \left[\int^{\mathcal{M}^2 z^2}_{\muf^2} \frac{\de k_t^2}{k_t^2} A\left(\as(k_t^2)\right)+H\left(\as\left(\mathcal{M}^2z^2\right)\right)\right]\right\},
+\end{align}
+where, for NLL accuracy, we need $A_1,A_2,H_1$, see Eq.~(\ref{Resummation_constants}), and
+\begin{align}
+		\mathcal{H}^i_1\left(\frac{Q^2}{\muf^2},\xi\right)=& \frac{3}{4} \log{\left(\frac{Q^2(1+\xi)}{\muf^2}\right)}+\log{\left(\frac{\xi}{1+\xi}\right)}\frac{1-2\xi}{4}\\
+		&+\frac{h_i}{2}-\text{Li}_2\left(-\frac{1}{\xi}\right)-2.
+\end{align}
+The constant $\textit{h}_i$ are~\cite{Gluck:1996ve}:
+\begin{equation}
+h^1=h^3=0,\quad h^2= \xi \log{\left(\frac{\xi}{1+\xi}\right)}.
+\end{equation}
+The scale that appears in the upper limit of the transverse momentum integration is 
+\begin{equation}\label{eq:DIS_mass_scale}
+\mathcal{M}^2=Q^2\frac{(1+\xi)^2}{\xi}.
+\end{equation}
+%
+The integrals in Eq.~(\ref{eq:resummed_DIS_massive}) can be evaluated to NLL accuracy. Explicit results can be found in Ref.~\cite{Corcella:2003ib}. The structure of the resummation  Eq.~(\ref{eq:resummed_DIS_massive}) presents some differences with respect to the one for $H\to b\bar b$ previously described and, therefore, it deserves some comments. 
+%
+Even if it is performed by keeping the final-state charm quark massive, because the initial-state quark is massless, the resummed exponent features both double logarithmic contributions, related to gluon emissions off massless partons, and contributions that the product of logarithms of $N$ and $\xi$, originating from emission off the massive charm.
+%
+Furthermore, we note that in the small mass limit, the coefficient $\mathcal{H}^i_1$ has a double logarithmic behaviour
+\begin{equation}
+\mathcal{H}^i_1=\frac{1}{2}\log^2{\xi} +\frac{3}{4} \log \frac{Q^2}{\muf^2}-\frac{1}{4} \log \xi -\frac{\pi^2}{6}
+% \text{Li}_2\left(-\frac{1}{\xi}\right)=-\frac{1}{2}\log^2{\xi}+\frac{\pi^2}{6}
+ +\order{\xi}.
+\end{equation}
+As we have already pointed out, the mass of the unresolved particle (here the charm quark) is responsible of the double mass logarithm. 
+%
+%We have explicitly checked this by considering $\mathcal{O}(\as)$ coefficient functions with different (non-zero) masses~\cite{Kretzer:1998ju} and performing the massless limit.
+
+
+In Ref.~\cite{Corcella:2003ib} the resummed calculation with massless charm, was also performed. The result reads
+\begin{align}\label{eq:resummed_DIS_massless}
+\widetilde{G}^{i}_q\left(N,\frac{Q^2}{\muf^2}\right)&
+=\left(1+ \frac{\as(\mur^2)\cf }{\pi}\mathcal{G}^i_1\left(\frac{Q^2}{\muf^2}\right)\right) \nonumber \\
+&
+\exp\left\{-\int^{1}_{{\frac{1}{ \bar N}}} \frac{\de z}{z} \left[\int^{Q^2 z}_{\muf^2} \frac{\de k_t^2}{k_t^2} A\left(\as(k_t^2)\right)+\frac{1}{2} B\left(\as\left(Q^2z\right)\right)\right]\right\},
+\end{align}
+where for NLL accuracy, we need $A_1,A_2,B_1$, see Eq.~(\ref{Resummation_constants}), and
+\begin{align}
+		\mathcal{G}^i_1\left(\frac{Q^2}{\muf^2}\right)=& \frac{3}{2} \log \frac{Q^2}{\muf^2}-\frac{\pi^2}{12}-\frac{9}{4}.
+\end{align}
+Once again, we find that Eq.~(\ref{eq:resummed_DIS_massless}) cannot be obtain by taking the $\xi \to 0$ limit of Eq.~(\ref{eq:resummed_DIS_massive}).
+
+In order to apply our resummation formalism, we have to write the above results in terms of jet functions. 
+%
+In DIS experiments, a measurement of $\chi_\text{B}$ probes the dynamics of the incoming particle.
+%
+Therefore, the measured jet function $J_q$ describes radiation collinear to the initial-state quark and it is therefore massless in both cases:
+\begin{equation}\label{eq:massless-jet-function}
+J_q\left(N,\frac{Q^2}{\muf^2}\right)=-\int^{1}_{{\frac{1}{ \bar N}}} \frac{\de z}{z} \int^{Q^2 z^2}_{\muf^2} \frac{\de k_t^2}{k_t^2} A\left(\as(k_t^2)\right).
+\end{equation}
+%
+The final state instead is treated differently in the two cases. If we consider the charm quark as massless, as in Eq.~(\ref{eq:resummed_DIS_massless}), then the charm jet is equal to the unmeasured jet function $\bar J$, defined in Eq.~(\ref{eq: barJ}) (with $Q^2$ instead of $q^2$). Thus, we can rewrite Eq.~(\ref{eq:resummed_DIS_massless}) as
+\begin{align}\label{eq:resummed_DIS_massless_bis}
+\widetilde{G}^{i}_q\left(N,\frac{Q^2}{\muf^2}\right)&
+=\left(1+ \frac{\as(\mur^2)\cf }{\pi}\mathcal{G}^i_1\left(\frac{Q^2}{\muf^2}\right)\right) \exp\left [ J_q\left(N,\frac{Q^2}{\muf^2}\right)+\bar J(N)\right].
+\end{align}
+On the other hand, in the massive case we have 
+\begin{align}\label{eq:resummed_DIS_massive_bis}
+\widetilde{C}^i_q\left(N,\frac{Q^2}{\muf^2},\xi\right)&= \left(1+ \frac{\as(\mur^2)\cf }{\pi}\mathcal{H}^i_1\left(\frac{Q^2}{\muf^2},\xi\right)\right) \nonumber \\
+&
+\exp\left\{J_q\left(N,\frac{Q^2}{\muf^2}\right)-\int^{1}_{\frac{1}{\bar N}} \frac{\de z}{z} \left[\int^{\mathcal{M}^2 z^2}_{Q^2 z^2} \frac{\de k_t^2}{k_t^2} A\left(\as(k_t^2)\right)+H\left(\as\left(\mathcal{M}^2z^2\right)\right)\right]\right\},
+\nonumber\\
+&= \left(1+ \frac{\as(\mur^2)\cf }{\pi}\mathcal{H}^i_1\left(\frac{Q^2}{\muf^2},\xi\right)\right) \nonumber \\
+&
+\exp\left\{J_q\left(N,\frac{Q^2}{\muf^2}\right)-2 \int^{1}_{\frac{1}{\bar N}} \frac{\de z}{z}  \as\left(\mathcal{M}^2z^2\right)
+	\gszeroMm(\xi)\right\}+\text{NNLL},
+\end{align}
+where we have introduced the appropriate soft anomalous dimension for one massive and one massless parton, see e.g.~\cite{Kidonakis:2020gxo}  
+\begin{equation}
+ 	\gszeroMm(\xi)=\frac{\cf}{2}\left[\log{\left(\frac{(1+\xi)^2}{\xi}\right)}-1\right].
+ \end{equation} 
+
+Our goal is to match Eq.~(\ref{eq:resummed_DIS_massless_bis}) to Eq.~(\ref{eq:resummed_DIS_massive_bis}).
+%
+First, we note that the massless jet function $J_q$ is the same in both Eq.~(\ref{eq:resummed_DIS_massless_bis}) and Eq.~(\ref{eq:resummed_DIS_massive_bis}). 
+%
+The evaluation of integrals in Eq.~(\ref{eq:massless-jet-function}) requires some care if we want to keep track of quark flavour thresholds, as discussed at length in the previous sections.
+%
+Note that, in contrast to the heavy-quark fragmentation case, where we had a perturbative initial condition, here we must supplement the description of radiation collinear to the initial state with non-perturbative PDFs, which also require specifying the flavour number scheme. Following Ref.~\cite{Corcella:2003ib}, we do not include any DGLAP evolution factor in $J_q$, in contrast to what we did for the fragmentation case. 
+
+Thus, the only non-trivial step which is required to match Eq.~(\ref{eq:resummed_DIS_massless_bis}) to Eq.~(\ref{eq:resummed_DIS_massive_bis}) is the calculation of the the unmeasured jet function in the quasi-collinear limit. This is precisely what was done in Sect.~\ref{sec:jbar-lund}. Therefore, the construction of the resummed structure functions follows from what was done in sec~ \ref{sec:results_decay}. 
+We obtain: 
+%
+%\begin{equation}\label{eq:final-result-dis}
+%\mathcal{F}^i_q(x,\xi)= \int_{c-i \infty}^{c+ i \infty}\frac{\de N}{2 \pi i}\, \chi^{-N} f_q(N,\muf^2)
+%\begin{cases} 	
+%\widetilde{G}^{i}_q\left(N,\frac{Q^2}{\muf^2}\right) & \text{if}\;1-\chib>\sqrt{\xi} ,\\
+%\mathcal{F}_q^{i(\text{match})}\exp{[J_q(N)+\bar{J}^{(2)}(N,\xi)]} & \text{if}\;\sqrt{\xi}>1-\chib>\xi\; , \\
+%\widetilde{C}^{i,\text{sub}}_q\left(N,\frac{Q^2}{\muf^2}\right) \exp\left[\bar{J}^{(3)}(N,\xi)\right]  &\text{if} \;\xi>1-\chib ,\\
+%\end{cases}	
+%\end{equation}
+\begin{equation}\label{eq:final-result-dis-start}
+\mathcal{F}^i_q(\chi_{\text{B}},\xi)= \int_{c-i \infty}^{c+ i \infty}\frac{\de N}{2 \pi i}\, \chi_{\text{B}}^{-N} f_q(N,\muf^2)\Sigma\left(N, \frac{Q^2}{\muf^2},\xi\right),
+\end{equation}
+with
+\begin{equation}\label{eq:final-result-dis}
+\Sigma=
+\begin{cases} 	
+\widetilde{G}^{i,\text{sub}}_q\left(N,\frac{Q^2}{\muf^2}\right)\exp{[J^{(1)}_q(N)+\bar{J}^{(1)}(N,\xi)]}  &  \text{if}\;1-\chib>\sqrt{\xi} ,\\ 
+\mathcal{F}_q^{i,\text{match}}\exp{[J^{(2)}_q(N,\xi)+\bar{J}^{(2)}(N,\xi)]} & \text{if}\;\sqrt{\xi}>1-\chib>\xi\; , \\ 
+\widetilde{C}^{i,\text{sub}}_q\left(N,\frac{Q^2}{\muf^2}\right)\exp{[J^{(2)}_q(N,\xi)+\bar{J}^{(3)}(N,\xi)]} &\text{if} \;\xi>1-\chib ,\\
+\end{cases}	
+\end{equation}
+where we have introduced the subtracted coefficient functions
+\begin{align}\label{eq:dis-subtracted}
+\widetilde{G}^{i,\text{sub}}_q\left(N,\frac{Q^2}{\muf^2}\right) &=\left(1+ \frac{\as(\mur^2)\cf }{\pi}\mathcal{G}^i_1\left(\frac{Q^2}{\muf^2},\xi\right)\right),
+\nonumber\\
+\widetilde{C}^{i,\text{sub}}_q\left(N,\frac{Q^2}{\muf^2}\right) &=
+ \left(1+ \frac{\as(\mur^2)\cf }{\pi}\mathcal{H}^i_1\left(\frac{Q^2}{\muf^2},\xi\right)\right)
+\exp\left[ -2\int^{1}_{\frac{1}{\bar N}} \frac{\de z}{z}  \as\left(\mathcal{M}^2z^2\right) \gszerotildeMm(\xi) \right],
+\end{align}
+with
+\begin{equation}
+\gszerotildeMm(\xi)=\cf\log{\left(1+\xi\right)}.
+\end{equation}
+The jet functions introduced in Eq.~(\ref{eq:final-result-dis}) are defined as follows:
+the function $J^{(1)}_q$ coincides with Eq.~(\ref{eq:massless-jet-function}) and it is the same as $\Delta(N)$ introduced in Eq~(\ref{eq: delta function}):
+\begin{equation}
+	J^{(1)}_q(N)=\int^{1}_{{\frac{1}{ \bar N}}} \frac{\de z}{z} \int^{\muf^2}_{Q^2 z^2} \frac{\de k_t^2}{k_t^2} A\left(\as(k_t^2)\right).
+\end{equation}
+As we have discussed at length in the previous sections, when we cross the threshold $1-\chi_{\text{B}}=\sqrt{\xi}$, we obtain two contributions, one at $n_l$ flavours and another at $n_f$: \sm{questo risultato non mi torna}
+\begin{equation}\label{eq: J2}
+ 		J^{(2)}_q(N,\xi)=J^{(1)}_q\left(\frac{e^{-\gamma_E}}{\sqrt{\xi}} \right)+ \int^{\sqrt{\xi}}_{\frac{1}{\bar N}} \frac{\de z}{z} \int^{m^2}_{Q^2 z^2} \frac{\de k_t^2}{k_t^2}  A\left(\as(k_t^2)\right).
+ \end{equation}
+% \begin{equation}\label{eq: J2}
+% 	\begin{split}
+% 		J^{(2)}_q(N,\xi)=J^{(1)}_q\left(\frac{e^{-\gamma_E}}{\sqrt{\xi}} \right)- \int^{\sqrt{\xi}}_{\frac{1}{\bar N}} \de z \int^{m^2}_{q^2 z^2} \frac{\de k_t^2}{k_t^2} \frac{\as^{\text{CMW}}(k_t^2)}{2\pi}P_{qq}(z),
+% 		\end{split}
+% \end{equation}
+Explicit results are given in App.~\ref{app:calculations}, Eq.~(\ref{eq:JqDISfinal}).
+ %
+The unmeasured jet functions in Eq.~(\ref{eq:final-result-dis}), $\bar{J}^{(1)}(N),\bar{J}^{(2)}(N,\xi),\bar{J}^{(3)}(N,\xi)$, coincide with the ones computed for the decay process and can be found in App.~\ref{app:calculations},
+% in  Eqs~(\ref{eq:Jbar_FF},\ref{eq:Jbar_intermediate_region},\ref{eq:Jbar-final-region})  respectively and evaluated for $1-x=\frac{1}{\bar N}$. 
+%The explicit expressions for $\bar{J}^{(2)}(N,\xi)$ and $\bar{J}^{(3)}(N,\xi)$ can be found in App.~\ref{app:calculations}, Eqs.~(\ref{eq: Jbar2},\ref{eq: Jbar3}).
+Furthermore, $\mathcal{F}_q^{i,\text{match}}$ is an arbitrary matching constant that we cannot determine within our approximations. 
+We also note that if we are interested in the large $Q^2$ region, we have to consider additional flavour thresholds in the QCD running coupling, corresponding, for instance, to the $4 \to 5$ flavour transition.
+%
+
+In order to perform phenomenological studies of Eq.~(\ref{eq:final-result-dis}), we also have to consider the role of PDFs and the effects that a variable flavour number scheme, such as the one adopted here, have on their evolution. We leave such investigations to future work. 
+
+Finally, for the DIS jet function $J_q$, we have
+\begin{equation}
+	\begin{split}
+	\label{eq:JqDISfinal}
+J_q^{(1)}\left(N,\frac{\mur^2}{q^2}\right)&= \Delta^{(1)}\left(N,\frac{\mur^2}{q^2}\right), \\
+ J_q^{(2)}\left(N,\xi,\frac{\muf^2}{q^2},\frac{\mur^2}{q^2},\frac{\muOr^2}{m^2}\right)&= \Delta^{(1)}\left(\frac{e^{-\gamma_E}}{\sqrt{\xi}} \right)+\Delta^{(2)}(N,\xi)+\hat E \left(N,\xi,m^2,\muf^2\right),
+\end{split}
+\end{equation}
+where, for DIS, $\xi=\frac{m^2}{Q^2}$.
+
+
+
+
+\bibliography{HQDIS}
+
+\end{document} 
