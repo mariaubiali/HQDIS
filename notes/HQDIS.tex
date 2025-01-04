@@ -101,6 +101,7 @@ CC DIS
 }
 
 \author[1]{Andrea Ghira,}
+\author[1]{Lorenzo Mai,}
 \author[1]{Simone Marzani,}
 \author[1]{Giovanni Ridolfi,}
 \author[2]{and Maria Ubiali}
@@ -122,13 +123,8 @@ CC DIS
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Extension to other processes}\label{sec:extensions}
 
-Thus far, we have focussed our discussion on the decay of a of colour singlet into a heavy-quark pairs. However, our calculation relies upon factorisation properties of QCD matrix elements in the quasi-collinear and soft limits, which are universal. Therefore, our formalism can be applied to different processes. In this section, we discuss some applications, highlighting the structure of parton-level results. This will enable us to shed light on issues pointed out in the literature. In this context, we will also discuss similarities and differences with other approaches. 
-%
-Instead, we will leave phenomenological (hadron-level) studies to future work.
-
-\subsection{Deep inelastic scattering with heavy flavours}\label{sec:dis}
+\section{Deep inelastic scattering with heavy flavours}\label{sec:dis}
 
 The first process we would like to discuss is deep-inelastic scattering (DIS) with heavy flavours. In particular, we focus on charged current (CC) DIS. Our discussion applies to to the scattering of a neutrino $\nu$ off a nucleus $N$, $\nu N \to l X$, where $l$ is a charged lepton, as well as to CC  $l N \to \nu X$ scattering. In both cases, we are interested in the situation in which charm flavour is identified in the final state. The parton-model contribution to these processes is given by
 \begin{equation}
@@ -180,8 +176,9 @@ The $\mathcal{F}^i$ functions are related to the structure functions $F_i$ throu
 \end{equation}
 In Eq.~(\ref{eq:coll-fact-HQ}), $C_i^q$ and $C_i^g$ are the coefficient functions the quark- and gluon-initiated processes, and $f_q$ and $f_g$ are the corresponding PDFs.
 %
-Note that the coefficient functions depends on the charm mass through $\xi$ and that their scaling variable is $x=\frac{\chib}{\zeta}$.
+Note that the coefficient functions depend on the charm mass through $\xi$ and that their scaling variable is $x=\frac{\chib}{\zeta}$.
 
+\subsection{Soft resummation in the massive scheme}\label{sec:massive_NLL}
 The quark-initiated contribution is enhanced in the soft limit and NLL resummation was performed in~\cite{Corcella:2003ib} by considering Mellin moments of the coefficient functions $C_i^q$:
 \begin{align}\label{eq:resummed_DIS_massive}
 \widetilde{C}^i_q\left(N,\frac{Q^2}{\muf^2},\xi\right)&= \int_0^1 \de  x \, x^{N-1}
@@ -218,7 +215,7 @@ As we have already pointed out, the mass of the unresolved particle (here the ch
 %
 %We have explicitly checked this by considering $\mathcal{O}(\as)$ coefficient functions with different (non-zero) masses~\cite{Kretzer:1998ju} and performing the massless limit.
 
-
+\subsection{Soft resummation in the massless scheme}\label{sec:massless_NLL}
 In Ref.~\cite{Corcella:2003ib} the resummed calculation with massless charm, was also performed. The result reads
 \begin{align}\label{eq:resummed_DIS_massless}
 \widetilde{G}^{i}_q\left(N,\frac{Q^2}{\muf^2}\right)&
@@ -232,6 +229,18 @@ where for NLL accuracy, we need $A_1,A_2,B_1$, see Eq.~(\ref{Resummation_constan
 \end{align}
 Once again, we find that Eq.~(\ref{eq:resummed_DIS_massless}) cannot be obtain by taking the $\xi \to 0$ limit of Eq.~(\ref{eq:resummed_DIS_massive}).
 
+\subsection{Consistent resummation at NLL$^\prime$}
+
+\sm{Here I would present the consistent resummed formula at parton level in terms of coefficient functions}
+
+\section{Resummed FONLL and phenomenology}
+
+\begin{itemize}
+\item matching
+\item Mellin inversion
+\end{itemize}
+
+\section{Old stuff}
 In order to apply our resummation formalism, we have to write the above results in terms of jet functions. 
 %
 In DIS experiments, a measurement of $\chi_\text{B}$ probes the dynamics of the incoming particle.
